@@ -1,41 +1,24 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+window.onload = function () {
+  function generateExcuse() {
+    let who = ["Mi perro", "Mi abuela", "El cartero", "Mi pajarito"];
+    let action = ["comió", "meó", "rompió", "estalló"];
+    let what = ["mi tarea", "mi móvil", "el auto"];
+    let when = [
+      "antes de la clase",
+      "cuando estaba durmiendo",
+      "mientras hacía ejercicios",
+      "durante el almuerzo",
+      "cuando miraba series"
+    ];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-import { Carousel } from "bootstrap";
+    let randomWho = who[Math.floor(Math.random() * who.length)];
+    let randomAction = action[Math.floor(Math.random() * action.length)];
+    let randomWhat = what[Math.floor(Math.random() * what.length)];
+    let randomWhen = when[Math.floor(Math.random() * when.length)];
 
-window.onload = function() {
-  let persona1 = {
-    name: "Cristian",
-    surname: "Lopez",
-    Car: "Mondeo"
-  };
+    let excuse = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
 
-  let persona2 = {
-    name: "Cristian",
-    surname: "Lopez",
-    Car: "Polo"
-  };
-
-  let persona3 = {
-    name: "Cristian",
-    surname: "Lopez",
-    Car: "Civic"
-  };
-
-  let persona4 = {
-    name: "Cristian",
-    surname: "Lopez",
-    Car: "Caravan"
-  };
-
-  let persona5 = {
-    name: "Cristian",
-    surname: "Lopez",
-    Car: "Twingo"
-  };
-
-  console.log(persona1);
+    document.querySelector("#excuse").innerHTML = excuse;
+  }
+  generateExcuse();
 };
